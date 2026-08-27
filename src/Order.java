@@ -5,6 +5,9 @@ public record Order(String orderId, List<Product> products, String customerEmail
     /** ผลรวมราคาสินค้าทุกชิ้น (ก่อนหักส่วนลด) */
     public double getTotalPrice() {
         double sum = 0;
+        for (Product p : products) {
+        sum += p.price();
+        }
         // TODO (1a): วนลูป products แล้วบวก p.price() เข้า sum
         //   hint: for (Product p : products) sum += p.price();
         /* ====== fill in here ====== */
